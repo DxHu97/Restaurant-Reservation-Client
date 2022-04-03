@@ -36,13 +36,13 @@ const CreateReservations = () => {
           );
           resResponse.reservation_time = resResponse.reservation_time.substring(0,5)
           setReservation(resResponse);
-        } else {          setReservation({ ...initialFormData });
+        } else {setReservation({ ...initialFormData });
         }
       } catch (err) {
         setError(err);
       }
     }
-    loadReservation();
+    loadReservation(); //eslint-disable-line react-hooks/exhaustive-deps
 
     return () => abortController.abort();
   }, [reservationId]);
